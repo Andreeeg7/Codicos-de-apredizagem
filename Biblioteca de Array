@@ -1,0 +1,53 @@
+    public class Biblioteca_de_Array
+    {
+     
+    public static void Leia_Vetor(int[] vector)
+    {
+        for (int i = 0; i < vector.Length; i++)
+        {
+            Console.Write($"[{i}]:");
+            vector[i] = int.Parse(Console.ReadLine());
+        }
+    }//Leia Vetor
+    public static void Mostre_Vetor(int[] vector)
+    {
+        for (int i = 0; i < vector.Length; i++)
+        {
+            Console.Write($"|{vector[i]} ");
+        }
+    }//Mostre Vetor
+    public static void Gera_Vetor(int[] vector)
+    {
+        Random random = new Random();
+        for (int i = 0; i < vector.Length; i++)
+        {
+            vector[i] = random.Next(1, 100);
+        }
+    } // Gera Vetor
+
+
+    public static void Leia_Vetor(double[] vector)
+    {
+        for (int i = 0; i < vector.Length; i++)
+        {
+            Console.Write($"[{i:F2}]:");
+            vector[i] = int.Parse(Console.ReadLine());
+        }
+    }//Leia Vetor Double
+    public static void Mostre_Vetor(double[] vector)
+    {
+        for (int i = 0; i < vector.Length; i++)
+        {
+            Console.Write($"|{vector[i]:F2} ");
+        }
+    }//Mostre Vetor Double
+    public static void Gera_Vetor(double[] vector)
+    {
+        Random random = new Random();
+        for (int i = 0; i < vector.Length; i++)
+        {
+            vector[i] = random.Next(1, 100);
+        }
+    } // Gera Vetor Double
+}
+}
