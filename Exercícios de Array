@@ -31,3 +31,22 @@ class Exercicios05
         }
     }
 }
+
+class Exercicios11
+{
+    public static void Exercicio()
+    {
+        string frase;
+        Console.WriteLine("Digite uma frase CODIFICADA");
+        frase = Console.ReadLine();
+        for (int i = 0; i < frase.Length; i++)
+        {
+            if(frase[i] != 'p')
+                Console.Write(frase[i]);
+            else
+               if(frase[i-1] == 'p' && frase[i+1] == 'p')
+                    Console.Write(frase[i]);
+                
+            }
+        }
+    }
