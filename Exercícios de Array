@@ -1,36 +1,158 @@
-class Exercicios05
-{
-    public static void Exercicio()
-    {
-        string dna;
-        Console.WriteLine("Entre com as bases:");
-        dna = Console.ReadLine();
-        int n = dna.Length;
-        char[] complementar = new char[n];
+//Exercício 1
+using Exercicios;
+using System;
 
-        for (int i = 0; i < n; i++)
+namespace Exercicios
+{
+    public class Exercicios01
+    {
+        public static void Executar()
         {
-           switch(dna[i])
-            {
-                case 'T': complementar[i] = 'A'; 
-                    break;
-                case 'A': complementar[i] = 'T';
-                    break;
-                case 'C': complementar[i] = 'G';
-                    break;
-                case 'G': complementar[i] += 'C';
-                    break;
-            }
-        }
-        Console.WriteLine("===DNA===");
-        Console.WriteLine($" {dna}");
-        Console.WriteLine("Base complementar:");
-        for (int i = 0; i < complementar.Length; i++)
-        {
-            Console.Write($" {complementar[i]}");
+            int num;
+            Console.Write("Digite a quantidade de vetores:");
+            num = int.Parse(Console.ReadLine());
+            int[] vetor = new int[num];
+            Biblioteca_de_Array.Leia_Vetor(vetor);
+            Console.Write("Os valores ditados foram:");
+            Biblioteca_de_Array.Mostre_Vetor(vetor);
+            int soma = Biblioteca_de_Array.Soma_de_Vetor(vetor);
+            Console.WriteLine($"\nA soma dos vetores será de {soma}");
+            Console.ReadKey();
         }
     }
 }
+
+//Exercício 2
+using Exercicios;
+using System;
+
+
+namespace Exercicios
+{
+    public class Exercicios02
+    {
+        public static void Executar()
+        {
+            int num;
+            Console.Write("Escreva a quantidade de vetores:");
+            num = int.Parse(Console.ReadLine());
+            int[] vetor = new int[num];
+            Biblioteca_de_Array.Leia_Vetor(vetor);
+            Console.Write("Os valores ditados foram:");
+            Biblioteca_de_Array.Mostre_Vetor(vetor);
+            int maior = Biblioteca_de_Array.Maior(vetor);
+            Console.WriteLine($"\nO maior numero digitado foi {maior}");
+            Console.ReadKey();
+        }
+    }
+}
+
+//Exercício 3
+using Exercicios;
+using System;
+
+namespace Exercicios
+{
+    internal class Exercicios03
+    {
+        public static void Executar()
+        {
+            int num;
+            Console.Write("Digite a quantidade de vetores a serem ultilizados:");
+            num = int.Parse(Console.ReadLine());
+            int[] vetor = new int[num];
+            Biblioteca_de_Array.Leia_Vetor(vetor);
+            Console.Write("Os valores ditados foram:");
+            Biblioteca_de_Array.Mostre_Vetor(vetor);
+            int menor = Biblioteca_de_Array.Menor(vetor);
+            Console.WriteLine($"\nO menor numero digitado foi {menor}");
+            Console.ReadKey();
+        }
+    }
+}
+
+//Exercício 4
+using Exercicios;
+using System;
+
+namespace Exercicios
+{
+    internal class Exercicios04
+    {
+        public static void Executar()
+        {
+            int num;
+            Console.Write("Digite a quantidade de vetores que serão gerados aleatoriamente:");
+            num = int.Parse(Console.ReadLine());
+            int[] vetor = new int[num];
+            Biblioteca_de_Array.Gera_Vetor(vetor);
+            foreach (int numero in vetor)
+            {
+                Console.Write(numero + " ");
+            }
+            int impar = Biblioteca_de_Array.Impar(vetor);
+            Console.WriteLine($"\nA quantidade de numeros imapares é de {impar}");
+            Console.ReadKey();
+
+        }
+    }
+}
+//Exercício 5
+using Exercicios;
+using System;
+
+namespace Exercicios
+{
+    internal class Exercicios05
+    {
+        public static void Executar()
+        {
+            string dna;
+            Console.WriteLine("Entre com as bases:");
+            dna = Console.ReadLine();
+            int n = dna.Length;
+            char[] complementar = new char[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                switch (dna[i])
+                {
+                    case 'T':
+                        complementar[i] = 'A';
+                        break;
+                    case 'A':
+                        complementar[i] = 'T';
+                        break;
+                    case 'C':
+                        complementar[i] = 'G';
+                        break;
+                    case 'G':
+                        complementar[i] += 'C';
+                        break;
+                }
+            }
+            Console.WriteLine("===DNA===");
+            Console.WriteLine($" {dna}");
+            Console.WriteLine("Base complementar:");
+            for (int i = 0; i < complementar.Length; i++)
+            {
+                Console.Write($" {complementar[i]}");
+            }
+        }
+    }
+}
+
+//Exercício 6
+
+//Exercício 7
+
+//Exercício 8
+
+//Exercício 9
+
+//Exercício 10
+
+//Exercício 11
 
 class Exercicios11
 {
@@ -50,3 +172,5 @@ class Exercicios11
             }
         }
     }
+
+//Exercício 12
