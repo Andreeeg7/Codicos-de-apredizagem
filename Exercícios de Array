@@ -1,4 +1,5 @@
 //Exercício 1
+
 using Exercicios;
 using System;
 
@@ -23,6 +24,7 @@ namespace Exercicios
 }
 
 //Exercício 2
+
 using Exercicios;
 using System;
 
@@ -48,6 +50,7 @@ namespace Exercicios
 }
 
 //Exercício 3
+
 using Exercicios;
 using System;
 
@@ -72,6 +75,7 @@ namespace Exercicios
 }
 
 //Exercício 4
+
 using Exercicios;
 using System;
 
@@ -98,6 +102,7 @@ namespace Exercicios
     }
 }
 //Exercício 5
+
 using Exercicios;
 using System;
 
@@ -144,33 +149,278 @@ namespace Exercicios
 
 //Exercício 6
 
+using Exercicios;
+using System;
+
+namespace Exercicios
+{
+    internal class Exercicios06
+    {
+        public static void Executar()
+        {
+            int num, cont = 0;
+            Random random = new Random();
+            num = random.Next(1, 100);
+            int[] rat = new int[num];
+            Biblioteca_de_Array.Gera_Vetor(rat);
+
+            Console.WriteLine("Digite um numero:");
+            int x = int.Parse(Console.ReadLine());
+            bool encontrado = false;
+            foreach (int i in rat)
+            {
+                if (x == i)
+                {
+                    Console.WriteLine($"Parabéns! Você acertou o número. A posição do número é {cont}.");
+                    encontrado = true;
+                    break;
+                }
+                cont++;
+            }
+            if (!encontrado)
+            {
+                Console.WriteLine($"O número {x} não está no vetor.");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+
 //Exercício 7
+
+using System;
+using Exercicios;
+
+namespace Exercicios
+{
+    internal class Exercicios07
+    {
+        public static void Executar()
+        {
+            Console.Write("Digite o tamanho dos vetores: ");
+            int n = int.Parse(Console.ReadLine());
+
+            // Cria três vetores: dois de entrada e um para o resultado
+            int[] vetor1 = new int[n];
+            int[] vetor2 = new int[n];
+            int[] vetorResultado = new int[n];
+
+            Biblioteca_de_Array.Gera_Vetor(vetor1);
+            Biblioteca_de_Array.Gera_Vetor(vetor2);
+
+            Console.WriteLine("Vetor 1:");
+            foreach (int num in vetor1)
+            {
+                Console.Write(num + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Vetor 2:");
+            foreach (int num in vetor2)
+            {
+                Console.Write(num + " ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < n; i++)
+            {
+                vetorResultado[i] = vetor1[i] * vetor2[i];
+            }
+
+            Console.WriteLine("Vetor Resultante (multiplicação):");
+            foreach (int num in vetorResultado)
+            {
+                Console.Write(num + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
 
 //Exercício 8
 
-//Exercício 9
+using System;
 
-//Exercício 10
-
-//Exercício 11
-
-class Exercicios11
+namespace Exercicios
 {
-    public static void Exercicio()
+    internal class Exercicios08
     {
-        string frase;
-        Console.WriteLine("Digite uma frase CODIFICADA");
-        frase = Console.ReadLine();
-        for (int i = 0; i < frase.Length; i++)
+        public static void Executar()
         {
-            if(frase[i] != 'p')
-                Console.Write(frase[i]);
-            else
-               if(frase[i-1] == 'p' && frase[i+1] == 'p')
-                    Console.Write(frase[i]);
-                
+            Console.WriteLine("Digite uma sequência de caracteres sem espaços:");
+            char[] vetor = Console.ReadLine().ToCharArray();
+            
+            int tamanho = vetor.Length;
+
+            Console.WriteLine("Vetor em ordem inversa:");
+            for (int i = tamanho - 1; i >= 0; i--)
+            {
+                Console.Write(vetor[i]);
             }
         }
     }
+}
+
+
+//Exercício 9
+
+using System;
+using Exercicios;
+
+namespace Exercicios
+{
+    internal class Exercicios09
+    {
+        public static void Executar()
+        {
+            int num, cont = 0;
+            Console.WriteLine("informe quantos numeros voce deseja colocar:");
+            num = int.Parse(Console.ReadLine());
+            int[] numeros = new int[num];
+            Biblioteca_de_Array.Leia_Vetor(numeros);
+            Console.WriteLine("Os numeros digitados foram:");
+            
+            Console.WriteLine("\nDigite o valor a ser verificado:");
+            int valor = int.Parse(Console.ReadLine());
+            
+            foreach (int elemento in numeros)
+            {
+                Console.Write(elemento + " ");
+                
+                if (elemento == valor)
+                {
+                    cont++;
+                }
+            }
+            Console.WriteLine($"\nO valor {valor} aparece {cont} vezes no vetor.");
+        }
+    }
+}
+
+
+//Exercício 10
+
+using System;
+using System.Numerics;
+using Exercicios;
+
+namespace Exercicios
+{
+    internal class Exercicios10
+    {
+        public static void Executar()
+        {
+            Console.WriteLine("Quantas vezes tu queres que o dado seja lançado?");
+            int num = int.Parse(Console.ReadLine());
+            
+            // Numeros aletorios do dado
+            Random random = new Random();
+            int[] vector = new int[num];
+            for (int i = 0; i < vector.Length; i++)
+            {
+                vector[i] = random.Next(1, 7);
+            }
+            // for das faces que mais aparecem
+            int cont = 0;
+            for (int i = 1; i != 7; i++)
+            {
+                
+                foreach (int j in vector)
+                {
+                    if(j == i)
+                    {
+                        cont++;
+                    }
+                }
+                Console.WriteLine($"A face do numero {i} apareceu {cont}");
+                cont = 0;
+            }
+        }
+    }
+}
+
+//Exercício 11
+
+using System;
+
+namespace Exercicios
+{
+    internal class Exercicios11
+    {
+        public static void Executar()
+        {
+            Console.WriteLine("Digite a mensagem codificada:");
+            string mensagemCodificada = Console.ReadLine();
+
+            // Inicializa uma string vazia para armazenar a mensagem decodificada
+            string mensagemDecodificada = "";
+
+            // Percorre a mensagem codificada, ignorando os caracteres 'p' que precedem as letras
+            for (int i = 0; i < mensagemCodificada.Length; i++)
+            {
+                if (mensagemCodificada[i] == 'p') // Se o caractere for 'p', pula para a próxima letra
+                {
+                    i++; // Ignora o 'p' e pega a próxima letra
+                    mensagemDecodificada += mensagemCodificada[i]; // Adiciona a letra após o 'p'
+                }
+                else
+                {
+                    mensagemDecodificada += mensagemCodificada[i]; // Adiciona caracteres que não são 'p'
+                }
+            }
+
+            // Exibe a mensagem decodificada
+            Console.WriteLine("Mensagem decodificada:");
+            Console.WriteLine(mensagemDecodificada);
+        }
+    }
+}
+
 
 //Exercício 12
+
+using System;
+using Exercicios;
+
+namespace Exercicios
+{
+    internal class Exercicios12
+    {
+        public static void Executar()
+        {
+            double[] notas = new double[5];
+            double soma = 0;
+            Console.WriteLine("Digite as cinco notas da escola de samba:");
+
+            // Declarar as notas
+            for (int i = 0; i < notas.Length; i++)
+            {
+                Console.Write($"{i + 1}° Nota:");
+                notas[i] = double.Parse(Console.ReadLine());
+                soma += notas[i];
+            }
+            // Maior nota
+            double maior = 0;
+            for (int i = 0; i < notas.Length; i++)
+            {
+                if (notas[i] > maior)
+                {
+                    maior = notas[i];
+                }
+            }
+            // Menor nota
+            double menor = notas[0];
+            for (int i = 1; i < notas.Length; i++)
+            {
+                if (notas[i] < menor)
+                {
+                    menor = notas[i];
+                }
+            }
+
+            double resutado = soma - (maior + menor);
+            Console.WriteLine($"A soma das três notas centrais é {resutado:F1} ");
+        }
+    }
+}
