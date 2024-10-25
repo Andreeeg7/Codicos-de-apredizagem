@@ -1,0 +1,43 @@
+using System;
+using Exercicios;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Escolha o exercico:");
+        for (int i = 1; i < 13; i++)
+        {
+            Console.WriteLine($"{i}° Exercício");
+        }
+        Console.Write("Escolha qual exercicio deve ser executado: ");
+        int escolha = int.Parse(Console.ReadLine());
+
+        switch(escolha)
+        {
+            case 1: Exercicios01.Executar();
+                break;
+            case 2: Exercicios02.Executar();
+                break;
+            case 3: Exercicios03.Executar();
+                break;
+            case 4: Exercicios04.Executar();
+                break;
+            case 5: Exercicios05.Executar();
+                break;
+            case 6: Exercicios06.Executar();
+                break;
+            case 7: Exercicios07.Executar();
+                break;
+            case 8: Exercicios08.Executar();
+                break;
+            case 9: Exercicios09.Executar();
+                break;
+            case 10:Exercicios10.Executar();
+                break;
+            case 11:Exercicios11.Executar();
+                break;
+            case 12:Exercicios12.Executar();
+                break;
+        }
+    }
+}
